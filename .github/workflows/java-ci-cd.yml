@@ -92,9 +92,9 @@
             context: .
             push: true
             tags: |
-              brunocast13/asseco-coin-game:${{ steps.project.outputs.version }}
-              brunocast13/asseco-coin-game:latest
-            cache-from: type=registry,ref=brunocast13/asseco-coin-game:latest
+              brunocast13/asseco-challenge:${{ steps.project.outputs.version }}
+              brunocast13/asseco-challenge:latest
+            cache-from: type=registry,ref=brunocast13/asseco-challenge:latest
             cache-to: type=inline
 
     deploy:
