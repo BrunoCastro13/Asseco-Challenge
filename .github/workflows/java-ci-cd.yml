@@ -1,4 +1,4 @@
-  name: CI/CD Pipeline a
+  name: CI/CD Pipeline
 
   on:
     push:
@@ -92,9 +92,9 @@
             context: .
             push: true
             tags: |
-              ghulamio/asseco-coin-game:${{ steps.project.outputs.version }}
-              ghulamio/asseco-coin-game:latest
-            cache-from: type=registry,ref=ghulamio/asseco-coin-game:latest
+              brunocast13/asseco-coin-game:${{ steps.project.outputs.version }}
+              brunocast13/asseco-coin-game:latest
+            cache-from: type=registry,ref=brunocast13/asseco-coin-game:latest
             cache-to: type=inline
 
     deploy:
