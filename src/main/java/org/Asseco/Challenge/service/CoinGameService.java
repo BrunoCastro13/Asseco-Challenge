@@ -28,9 +28,11 @@ public class CoinGameService {
             throw new IllegalArgumentException("Ambas as pessoas devem ter o mesmo número de ações");
         }
 
+        // Definir coins inicias de ambas as pessoas
         int rightPersonCoins = INITIAL_COINS;
         int leftPersonCoins = INITIAL_COINS;
 
+        // Loop pelo número de ações
         for (int i = 0; i < rightPersonActions.size(); i++) {
             String rightAction = rightPersonActions.get(i);
             String leftAction = leftPersonActions.get(i);
