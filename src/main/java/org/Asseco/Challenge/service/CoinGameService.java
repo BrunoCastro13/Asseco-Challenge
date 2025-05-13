@@ -25,7 +25,7 @@ public class CoinGameService {
 
         // Validar que ambas as pessoas têm o mesmo número de ações
         if (rightPersonActions.size() != leftPersonActions.size()) {
-            throw new IllegalArgumentException("Ambas as pessoas devem ter o mesmo número de ações");
+            throw new IllegalArgumentException("Ambas as pessoas devem ter o mesmo número de ações!");
         }
 
         // Definir coins inicias de ambas as pessoas
@@ -59,12 +59,12 @@ public class CoinGameService {
 
     private void validateActions(List<String> actions) {
         if (actions == null) {
-            throw new IllegalArgumentException("Não pode ser nulo o número de ações");
+            throw new IllegalArgumentException("Não pode ser nulo o número de ações!");
         }
 
         for (String action : actions) {
             if (!SHARE.equals(action) && !RECEIVE.equals(action)) {
-                throw new IllegalArgumentException("Ação inválida: " + action + ". Apenas 'P' (Partilhar) or 'R' (Receber) são permitidas.");
+                throw new IllegalArgumentException("Ação inválida: " + action + ". Apenas 'P' (Partilhar) or 'R' (Receber) são permitidas!");
             }
         }
     }
