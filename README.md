@@ -47,7 +47,7 @@ Onde:
 - `leftPerson`: Array de ações da pessoa à esquerda
 - Cada elemento pode ser "P" (partilhar/inserir moeda) ou "R" (receber/não fazer nada)
 
-### Resposta
+### Resposta 
 
 ```json
 {
