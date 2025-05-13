@@ -71,6 +71,8 @@ Onde:
         - `GameResult.java`: Modelo para a resposta
     - `service`
         - `CoinGameService.java`: Serviço com a lógica do jogo
+    - `exception`
+        - `GlobalExceptionHandler.java`: Classe responsável por tratar exceções globais da aplicação
 
 ## Testes
 
