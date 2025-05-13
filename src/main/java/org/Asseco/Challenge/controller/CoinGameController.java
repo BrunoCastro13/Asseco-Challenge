@@ -23,21 +23,8 @@ public class CoinGameController {
 
     @PostMapping("/coins")
     public ResponseEntity<GameResponse> processGame(@Valid @RequestBody GameRequest request) {
-        try {
-            GameResponse response = coinGameService.calculateCoins(request);
-            return ResponseEntity.ok(response);
-        } catch (IllegalArgumentException e) {
-            return ResponseEntity.badRequest().build();
-        }
-    }
-
-    @ExceptionHandler(MethodArgumentNotValidException.class)
-    public ResponseEntity<String> handleValidationExceptions(MethodArgumentNotValidException ex) {
-        return new ResponseEntity<>(ex.getMessage(), HttpStatus.BAD_REQUEST);
-    }
-
-    @ExceptionHandler(Exception.class)
-    public ResponseEntity<String> handleException(Exception e) {
-        return new ResponseEntity<>(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
+        // Aqui, você apenas chama o serviço. Se uma exceção ocorrer, será tratada globalmente
+        GameResponse response = coinGameService.calculateCoins(request);
+        return ResponseEntity.ok(response);
     }
 }
