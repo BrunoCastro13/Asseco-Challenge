@@ -56,7 +56,7 @@
             context: .
             push: true
             tags: |
-              brunocast13/Asseco-challenge:latest
+              brunocast13/asseco-challenge:latest
 
     deploy:
       needs: build
