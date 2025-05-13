@@ -5,13 +5,13 @@ import jakarta.validation.constraints.NotNull;
 import java.util.List;
 
 public class GameRequest {
-    @NotNull(message = "rightPerson actions cannot be null")
+    @NotNull(message = "As ações da \"rightPerson\" não podem ser nulas.")
     private List<String> rightPerson;
 
-    @NotNull(message = "leftPerson actions cannot be null")
+    @NotNull(message = "As ações da \"leftPerson\" não podem ser nulas.")
     private List<String> leftPerson;
 
-    // Getters and Setters
+    // Getters e Setters
     public List<String> getRightPerson() {
         return rightPerson;
     }

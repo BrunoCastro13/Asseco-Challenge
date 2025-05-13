@@ -12,7 +12,7 @@ public class GameResponse {
         this.leftPerson = leftPerson;
     }
 
-    // Getters and Setters
+    // Getters e Setters
     public int getRightPerson() {
         return rightPerson;
     }

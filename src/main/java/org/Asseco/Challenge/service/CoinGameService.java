@@ -19,13 +19,13 @@ public class CoinGameService {
         List<String> rightPersonActions = request.getRightPerson();
         List<String> leftPersonActions = request.getLeftPerson();
 
-        // Validate actions format
+        // Validar input
         validateActions(rightPersonActions);
         validateActions(leftPersonActions);
 
-        // Validate both lists have same size
+        // Validar que ambas as pessoas têm o mesmo número de ações
         if (rightPersonActions.size() != leftPersonActions.size()) {
-            throw new IllegalArgumentException("Both persons must have the same number of actions");
+            throw new IllegalArgumentException("Ambas as pessoas devem ter o mesmo número de ações");
         }
 
         int rightPersonCoins = INITIAL_COINS;
@@ -35,7 +35,7 @@ public class CoinGameService {
             String rightAction = rightPersonActions.get(i);
             String leftAction = leftPersonActions.get(i);
 
-            // Right person shares
+            // Pessoa da direita partilha
             if (SHARE.equals(rightAction)) {
                 if (rightPersonCoins >= COST_TO_SHARE) {
                     rightPersonCoins -= COST_TO_SHARE;
@@ -43,7 +43,7 @@ public class CoinGameService {
                 }
             }
 
-            // Left person shares
+            // Pessoa da esquerda partilha
             if (SHARE.equals(leftAction)) {
                 if (leftPersonCoins >= COST_TO_SHARE) {
                     leftPersonCoins -= COST_TO_SHARE;
@@ -57,12 +57,12 @@ public class CoinGameService {
 
     private void validateActions(List<String> actions) {
         if (actions == null) {
-            throw new IllegalArgumentException("Actions cannot be null");
+            throw new IllegalArgumentException("Não pode ser nulo o número de ações");
         }
 
         for (String action : actions) {
             if (!SHARE.equals(action) && !RECEIVE.equals(action)) {
-                throw new IllegalArgumentException("Invalid action: " + action + ". Only 'P' (Share) or 'R' (Receive) are allowed");
+                throw new IllegalArgumentException("Ação inválida: " + action + ". Apenas 'P' (Partilhar) or 'R' (Receber) são permitidas.");
             }
         }
     }

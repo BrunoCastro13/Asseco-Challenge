@@ -24,12 +24,6 @@ A aplicação simula uma máquina de moedas com duas extremidades, onde:
 ./mvnw spring-boot:run
 ```
 
-### Com Gradle
-
-```bash
-./gradlew clean build
-./gradlew bootRun
-```
 
 A aplicação estará disponível em: http://localhost:8080
 
@@ -39,7 +33,7 @@ A aplicação estará disponível em: http://localhost:8080
 
 `POST /coins`
 
-### Corpo da requisição
+### Corpo da requisição (Exemplo)
 
 ```json
 {
@@ -66,14 +60,6 @@ Onde:
 - `rightPerson`: Número final de moedas da pessoa à direita
 - `leftPerson`: Número final de moedas da pessoa à esquerda
 
-## Exemplo de Uso com curl
-
-```bash
-curl -X POST http://localhost:8080/coins \
-  -H "Content-Type: application/json" \
-  -d '{"rightPerson": ["P", "P", "R"], "leftPerson": ["P", "R", "R"]}'
-```
-
 ## Estrutura do Projeto
 
 - `com.asseco.challenge`
@@ -88,7 +74,7 @@ curl -X POST http://localhost:8080/coins \
 
 ## Testes
 
-A aplicação contém testes unitários e de integração que podem ser executados com:
+A aplicação contém testes que podem ser executados com:
 
 ### Maven
 
@@ -96,8 +82,17 @@ A aplicação contém testes unitários e de integração que podem ser executad
 ./mvnw test
 ```
 
-### Gradle
+## Pipleline CI/CD
 
-```bash
-./gradlew test
-```
+A aplicação utiliza uma pipeline de CI/CD configurada no GitHub Actions. A pipeline realiza os seguintes passos:
+
+- Compilação: O código é compilado usando Maven e as dependências são resolvidas.
+
+- Testes: São executados testes automatizados para garantir a qualidade do código.
+
+- Análise de Qualidade de Código: A qualidade do código é verificada usando o SonarCloud, que analisa o código e gera relatórios detalhados sobre cobertura de testes, complexidade e outros aspectos (https://sonarcloud.io/project/overview?id=BrunoCastro13_Asseco-Challenge).
+
+- Docker Build: A imagem Docker é construída e publicada no Docker Hub, permitindo a fácil execução do projeto em qualquer ambiente ("https://hub.docker.com/r/brunocast13/asseco-challenge").
+
+- Deploy (Simulação): O deploy da aplicação é simulado na pipeline.
+
