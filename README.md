@@ -13,7 +13,7 @@ A aplicação simula uma máquina de moedas com duas extremidades, onde:
 ## Requisitos
 
 - Java 17 ou superior
-- Maven ou Gradle
+- Maven
 
 ## Instalação e Execução
 
