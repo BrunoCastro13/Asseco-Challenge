@@ -39,23 +39,23 @@ public class CoinGameServiceTest {
     public void testCalculateCoins_BothPersonsShare() {
         // Arrange
         GameRequest request = new GameRequest();
-        request.setRightPerson(Arrays.asList("P", "P"));
-        request.setLeftPerson(Arrays.asList("P", "P"));
+        request.setRightPerson(Arrays.asList("P", "P", "P"));
+        request.setLeftPerson(Arrays.asList("P", "P", "P"));
 
         // Act
         GameResponse response = coinGameService.calculateCoins(request);
 
         // Assert
-        assertEquals(7, response.getRightPerson());
-        assertEquals(7, response.getLeftPerson());
+        assertEquals(9, response.getRightPerson());
+        assertEquals(9, response.getLeftPerson());
     }
 
     @Test
     public void testCalculateCoins_BothPersonsReceive() {
         // Arrange
         GameRequest request = new GameRequest();
-        request.setRightPerson(Arrays.asList("R", "R"));
-        request.setLeftPerson(Arrays.asList("R", "R"));
+        request.setRightPerson(Arrays.asList("R", "R", "R"));
+        request.setLeftPerson(Arrays.asList("R", "R", "R"));
 
         // Act
         GameResponse response = coinGameService.calculateCoins(request);
@@ -76,8 +76,6 @@ public class CoinGameServiceTest {
         GameResponse response = coinGameService.calculateCoins(request);
 
         // Assert
-        // Right person starts with 3, gives 3, ends with 0
-        // Left person starts with 3, gets 9, ends with 12
         assertEquals(0, response.getRightPerson());
         assertEquals(12, response.getLeftPerson());
     }
