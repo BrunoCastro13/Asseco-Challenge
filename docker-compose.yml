@@ -1,6 +1,6 @@
 services:
   app:
-    build: .
+    image: brunocast13/asseco-challenge:latest
     container_name: Jogo-Moeda
     ports:
       - "8080:80"
