@@ -12,4 +12,4 @@ COPY --from=builder /application/snapshot-dependencies/ ./
 COPY --from=builder /application/application/ ./
 
 EXPOSE 80
-ENTRYPOINT ["java", "org.springframework.boot.loader.launch.JarLauncher"]
+ENTRYPOINT ["java", "-Dserver.port=80", "org.springframework.boot.loader.launch.JarLauncher"]
