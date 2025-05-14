@@ -17,6 +17,11 @@ A aplicação simula uma máquina de moedas com duas extremidades, onde:
 
 ## Instalação e Execução
 
+### Com Docker 
+
+```bash
+docker compose up
+```
 ### Com Maven
 
 ```bash
